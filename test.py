@@ -7,9 +7,9 @@ rank = requests.get(url)
 soup = BeautifulSoup(rank.content,'html.parser')
 
 team_rank = soup.select('tbody>tr')
-team_rank_wds = soup.find_all('td')
 
 for num in range (1,40,2):
     a=team_rank[num]
+    b=a.find_all('td')
     for num2 in range (2,11):
-        print(team_rank_wds[num2])[num]
+        print(b[num2])
